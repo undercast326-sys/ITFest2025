@@ -28,6 +28,7 @@ class University(models.Model):
     internships = models.BooleanField(default=True)
     scholarships = models.BooleanField(default=True)
     image_url = models.URLField()
+    uni_tour = models.URLField(null=True, blank=True)
 
     def __str__(self):
         return f'{self.name} - {self.city}'
