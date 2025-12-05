@@ -22,3 +22,6 @@ class SurveyResponse(models.Model):
     responses_data = models.JSONField()
     completed_at = models.DateTimeField(auto_now_add=True)
     ai_analysis = models.JSONField(null=True, blank=True)
+
+    def __str__(self):
+        return f'{self.completed_at}'
