@@ -15,3 +15,10 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice
+
+
+class SurveyResponse(models.Model):
+    question = models.ForeignKey(Questions, on_delete=models.CASCADE)
+    responses_data = models.JSONField()
+    completed_at = models.DateTimeField(auto_now_add=True)
+    ai_analysis = models.JSONField(null=True, blank=True)

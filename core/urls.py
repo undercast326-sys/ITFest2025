@@ -11,5 +11,6 @@ router.register('types', views.TypeViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('poll/', include('survey.urls'))
 ]
