@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'webapp.apps.WebappConfig',
     'accounts',
+    'survey',
     'rest_framework',
     'rest_framework_simplejwt'
 ]

@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from webapp.models import Major, University, Type
+
+admin.site.register(Major)
+admin.site.register(University)
+admin.site.register(Type)
