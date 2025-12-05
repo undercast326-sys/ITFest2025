@@ -1,0 +1,10 @@
+.idea/
+.venv/
+__MACOSX
+.DS_Store
+.env
+myproject/
+db.sqlite3
+__pycache__/
+*.pyc__pycache__/
+*.pyc
