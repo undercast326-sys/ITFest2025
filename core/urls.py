@@ -11,6 +11,8 @@ router.register('types', views.TypeViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
-    path('', include(router.urls)),
-    path('poll/', include('survey.urls'))
+    path('', views.index, name='index'),
+    path('api/', include(router.urls)),
+    path('poll/', include('survey.urls')),
+    path('university/<int:pk>/', views.university_detail, name='university_detail')
 ]

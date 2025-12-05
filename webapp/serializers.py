@@ -12,7 +12,7 @@ class MajorSerializer(serializers.ModelSerializer):
 class TypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Type
-        fields = '__all_'
+        fields = '__all__'
 
 
 class UniversitySerializer(serializers.ModelSerializer):
@@ -21,4 +21,4 @@ class UniversitySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = University
-        fields = ('name', 'description', 'min_unt_score', 'tuition_fee', 'city', 'major', 'type', 'image_url', 'languages', 'scholarships', 'internships')
+        fields = ('id', 'name', 'description', 'min_unt_score', 'tuition_fee', 'city', 'major', 'type', 'image_url', 'languages', 'scholarships', 'internships')

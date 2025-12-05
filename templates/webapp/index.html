@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Университеты Казахстана</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+        }
+        .university-list {
+            list-style: none;
+            padding: 0;
+        }
+        .university-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .university-item a {
+            text-decoration: none;
+            color: #0066cc;
+            font-size: 18px;
+        }
+        .university-item a:hover {
+            color: #004499;
+        }
+    </style>
+</head>
+<body>
+    <h1>Университеты Казахстана</h1>
+    <ul class="university-list" id="universities-list">
+
+    </ul>
+
+    <script src="{% static 'webapp/js/main.js' %}"></script>
+</body>
+</html>
