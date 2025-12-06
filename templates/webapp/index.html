@@ -46,6 +46,15 @@
             <a href="/survey/">Пройти тест</a>
         </div>
     </div>
+        <div class="filters">
+    <input type="text" id="city-filter" placeholder="Город">
+    <input type="number" id="price-min" placeholder="Цена от">
+    <input type="number" id="price-max" placeholder="Цена до">
+    <label>
+        <input type="checkbox" id="scholarships"> Стипендии
+    </label>
+    <button onclick="applyFilters()">Применить фильтры</button>
+</div>
     <ul class="university-list" id="universities-list">
 
     </ul>

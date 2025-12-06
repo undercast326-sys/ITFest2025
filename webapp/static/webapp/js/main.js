@@ -40,3 +40,22 @@ function renderUniversities(universities) {
         list.appendChild(li);
     });
 }
+function applyFilters() {
+    const city = document.getElementById('city-filter').value;
+    const priceMin = document.getElementById('price-min').value;
+    const priceMax = document.getElementById('price-max').value;
+    const scholarships = document.getElementById('scholarships').checked;
+
+    let url = '/api/universities/?';
+
+    if (city) url += 'city=' + city + '&';
+    if (priceMin) url += 'tuition_fee_min=' + priceMin + '&';
+    if (priceMax) url += 'tuition_fee_max=' + priceMax + '&';
+    if (scholarships) url += 'scholarships=true&';
+
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            renderUniversities(data);
+        });
+}

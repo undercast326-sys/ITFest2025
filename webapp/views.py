@@ -1,5 +1,8 @@
+from django_filters.rest_framework import DjangoFilterBackend
+
 from webapp import serializers
 from webapp import models
+from webapp.filters import UniversityFilter
 from webapp.models import University
 from webapp.permissions import IsModeratorOrReadOnly
 from rest_framework import viewsets
@@ -10,6 +13,8 @@ class UniversityViewSet(viewsets.ModelViewSet):
     queryset = models.University.objects.all()
     lookup_url_kwarg = 'id'
     serializer_class = serializers.UniversitySerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_class = UniversityFilter
     permission_classes = [IsModeratorOrReadOnly]
 
 
