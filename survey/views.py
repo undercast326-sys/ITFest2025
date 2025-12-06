@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
@@ -13,7 +14,6 @@ class QuestionViewSet(viewsets.ModelViewSet):
     serializer_class = QuestionSerializer
     queryset = Questions.objects.all()
     lookup_url_kwarg = 'id'
-    permission_classes = [permissions.IsModeratorOrReadOnly]
 
     @action(detail=False, methods=['post'], url_path='submit')
     def submit_survey(self, request):
@@ -68,4 +68,6 @@ class ChoiceViewSet(viewsets.ModelViewSet):
     serializer_class = ChoiceSerializer
     queryset = Choice.objects.all()
     lookup_url_kwarg = 'id'
-    permission_classes = [permissions.IsModeratorOrReadOnly]
+
+def survey(request):
+    return render(request, 'survey/survey.html')

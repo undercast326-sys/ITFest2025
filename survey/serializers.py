@@ -2,7 +2,16 @@ from rest_framework import serializers
 from .models import Questions, Choice, SurveyResponse
 
 
+
+class ChoiceNestedSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Choice
+        fields ='__all__'
+
+
 class QuestionSerializer(serializers.ModelSerializer):
+    choices = ChoiceNestedSerializer(many=True)
+
     class Meta:
         model = Questions
         fields ='__all__'

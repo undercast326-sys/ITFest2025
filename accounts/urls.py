@@ -5,5 +5,6 @@ from accounts import views
 urlpatterns = [
     path('login/', TokenObtainPairView.as_view()),
     path('refresh/', TokenRefreshView.as_view()),
-    path('register/', views.UserCreateView.as_view())
+    path('register/', views.UserCreateView.as_view()),
+    path('', views.CurrentUserView.as_view())
 ]
